@@ -7,11 +7,14 @@ Basic Commands
  * `man` - view the manual page for a command.
  * `ls` - list contents of a directory.
  * `cd` - change the current directory.
- * `rm` - remove file.
+   - `cd -` - move back to the directory you were last in
+ * `rm <filename>` - remove file.
+   - `rm -r <directoryname>` - remove directory
  * `touch` - create file.
- * `mv` - move/rename file.
+ * `mv <filename>` - move/rename file.
  * `cp` - copy file.
- * `chmod`- change permissions of a file.
+   - `cp -r <directory>` - copy directory
+ * `chmod` - change permissions of a file.
  * `pwd` - show present working directory.
  * `ln` - create a link.
  * `history` - show recently executed commands.
@@ -34,7 +37,7 @@ sudo rm path/to/thing
 ```bash
 $ mkdir path/to/thing
 $ cd !$
-cd path/to/thing
+$ cd path/to/thing
 ```
 
  * `!<string>` - most recent command starting with `<string>`
@@ -57,4 +60,6 @@ $ mv app/src/{foo,foobar}.c
 
 or even:
 
-`$ mv app/src/foo{,bar}.c`
+```bash
+$ mv app/src/foo{,bar}.c
+```
