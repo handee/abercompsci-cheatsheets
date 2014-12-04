@@ -1,3 +1,6 @@
+Bash
+====
+
 Basic Commands
 ---------------
 
@@ -17,18 +20,22 @@ History Expansions
 -------------------
 
  * `!!` - previous command. Useful for:
-```
+
+```bash
 $ rm path/to/thing
 Permission denied
 $ sudo !!
 sudo rm path/to/thing
 ```
+
  * `!$` - last argument of the previous command. Useful for:
-```
+
+```bash
 $ mkdir path/to/thing
 $ cd !$
 cd path/to/thing
 ```
+
  * `!<string>` - most recent command starting with `<string>`
  * `!<number>` - run command with number as given by `history` command.
 
@@ -37,11 +44,15 @@ Argument Expansions
 
  * `{old,new}` syntax. For commands that take multiple, similar arguments. E.g.:
 
-`$ mv app/src/foo.c app/src/foobar.c`
+```bash
+$ mv app/src/foo.c app/src/foobar.c
+```
 
 which can be turned into:
 
-`$ mv app/src/{foo,foobar}.c`
+```bash
+$ mv app/src/{foo,foobar}.c
+```
 
 or even:
 
