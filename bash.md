@@ -15,6 +15,7 @@ Basic Commands
  * `pwd` - show present working directory.
  * `ln` - create a link.
  * `history` - show recently executed commands.
+ * `mkdir` - create a directory 
 
 History Expansions
 -------------------
