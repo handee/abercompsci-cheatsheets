@@ -10,9 +10,9 @@ When you log into a UNIX system, you start out in your home directory. Your UNIX
 
 central:  $
 end{v}
-The verb+central+  is the name of the machine you are logged into, and
-the verb+~+  is the name of your home directory. This is just a shorthand:
-if you use the verb+pwd+ command (Print Working Directory) you'll see
+The verb central  is the name of the machine you are logged into, and
+the verb ~  is the name of your home directory. This is just a shorthand:
+if you use the verb pwd command (Print Working Directory) you'll see
 the full name. In my case, this happens:
 begin{v}[commandchars=\[]]
 central:~ $ *[*pwd] /aber/jaf18
@@ -122,14 +122,10 @@ This will specify files which start with any sequence of characters, followed by
 The most important command
 ==========================
 
-l|p2in
-
 man *command* & get information about a command
 
 Changing directory
 ==================
-
-l|p2in
 
 cd *path* & change the working directory to a specified directory. Some examples follow.
 cd   & change to your home directory
@@ -142,8 +138,6 @@ pwd & print the absolute path of the current working directory
 Listing directories
 ===================
 
-l|p2in
-
 ls & get a short listing of the contents of the current working directory
 ls *path* & get a short listing of the contents of a named directory
 ls .. & get a short listing of the contents of the parent directory
@@ -155,8 +149,6 @@ ls -la *path*|more & as above, but split into pages (see Pipes, below)
 
 Copying files
 =============
-
-l|p2in
 
 cp *file1* *file2* & makes a new copy of *file1* called *file2*, keeping the old one. If there’s already a file called *file2* it will be overwritten.
 cp *file* *directory* & makes a new copy of *file* inside *directory*, but with the same name (so it’ll be *directory/file* . If there’s already a file of that name inside *directory* it will be overwritten.
@@ -176,8 +168,6 @@ Moving files
 
 The `mv` command works almost exactly the same way as `cp`, but it removes the original file!
 
-l|p2in
-
 mv *file1* *file2* & changes the name of *file1* to *file2*, keeping the old one. If there’s already a file called *file2* it will be overwritten.
 mv *file* *directory* & moves *file* into *directory*, so it’ll now be *directory/file* . If there’s already a file of that name inside *directory* it will be overwritten.
 mv *file1* *directory/file2* & moves *file1* into *directory*, and changes the name to *file2* (so it’ll be *directory/file2* . If there’s already a file of that name inside *directory* it will be overwritten.
@@ -185,8 +175,6 @@ mv *list-of-files* *directory* & move all the files in the list into a directory
 
 Managing directories and deleting stuff
 ---------------------------------------
-
-l|p2in
 
 mkdir *path* & will make a new directory with that path
 rmdir *path* & will remove the directory with that path
@@ -234,8 +222,6 @@ So we get a count of all the uniquely named processes running on the system.
 
 Showing the contents of files
 -----------------------------
-
-l|p2in
 
 cat *list-of-files* & just joins all the files together and outputs them
 more *list-of-files* & shows the files page by page
@@ -310,8 +296,6 @@ So I can read, write and `cd` into the directory and no-one else can do anything
 
 ### Changing permissions the “easy” way
 
-l|p2in
-
 chmod o+x *list-of-paths* & add execute permissions for other users to some files or directories
 chmod o-x *list-of-paths* & remove execute permissions for other users from some files or directories
 chmod a+rw *list-of-paths* & add read and write permissions for all users (that’s user, group and other)
@@ -325,7 +309,6 @@ You should get the idea: the first letter is “u” for the user, “g” for t
 
 This involves encoding the `rwxrwxrwx` block — which divides into user, group and other — as an octal number!
 
-l|p2in
 
 chmod 755 *list-of-paths* & set the permissions to: user can read, write and execute; group and read and execute; others can read and execute.
 
@@ -333,8 +316,6 @@ You might want to read up on this yourself, or stick with the other technique. I
 
 Other useful commands (and keys)
 ================================
-
-l|p2in
 
 logout & logs you out of the computer
 touch *file* & creates an empty file, or updates the last-modified date on an existing file
