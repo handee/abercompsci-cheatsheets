@@ -1,0 +1,433 @@
+\documentclass[twocolumn]{article}
+\usepackage[hmargin={0.5in,0.5in},vmargin={0.5in,0.5in}]{geometry}
+\usepackage{fancyvrb}
+\newcommand{\HRule}{\noindent\rule{\linewidth}{0.1mm}\\}
+\newcommand{\blankline}{\vspace{1ex}}
+\newcommand{\subscript}[1]{\ensuremath{_{\tiny\textrm{#1}}}}
+\newcommand{\superscript}[1]{\ensuremath{^{\tiny\textrm{#1}}}}
+\newcommand{\jref}[2]{\textsc{#1}\subscript{\pageref{#2}}}
+\newcommand{\orn}{\begin{center}$$\bullet$$\end{center}}
+
+\DefineVerbatimEnvironment{vv}{Verbatim}{
+    %numbers=left,numbersep=5pt,
+    %frame=lines,framerule=0.5mm,
+    fontsize=\small,xleftmargin=15pt}
+\DefineVerbatimEnvironment{v}{Verbatim}{
+    %numbers=left,numbersep=5pt,
+    %frame=lines,framerule=0.5mm,
+    fontsize=\small,xleftmargin=15pt}
+
+\DefineVerbatimEnvironment{vv2}{Verbatim}{
+    %numbers=left,numbersep=5pt,
+    %frame=lines,framerule=0.5mm,
+    fontsize=\scriptsize,xleftmargin=15pt}
+
+\begin{document}
+\section{Directories and files}
+Directories in UNIX are like folders in Windows. Every user has their
+home directory, and at any given time they have a working directory --- the
+directory in which they're currently working. It's sometimes called
+the current directory or current working directory.
+
+\subsection{Home and working directories}
+When you log into a UNIX system, you start out in your home directory. Your
+UNIX prompt will show this:
+\begin{v}
+central:~ $
+\end{v}
+The \verb+central+  is the name of the machine you are logged into, and
+the \verb+~+  is the name of your home directory. This is just a shorthand:
+if you use the \verb+pwd+ command (Print Working Directory) you'll see
+the full name. In my case, this happens:
+\begin{v}[commandchars=\\\[\]]
+central:~ $ \emph[pwd]
+/aber/jaf18
+\end{v}
+(I'm using italics to show the command I typed in, rather than Central's
+output.)
+
+\subsection{Paths}
+Just like folders in Windows, directories can contain files and other directories.
+We talk about a \emph{path} to a file or directory in UNIX --- it specifies a file by
+showing how to get there either from the current working directory (in which
+case it's a \emph{relative path}) or from the system's top level directory
+(the \emph{root} directory,) in which case it's a \emph{absolute path}.
+
+The path is made up of directory names, separated by slashes, until you
+get to the file or directory you're talking about.  Each
+directory is inside the previous directory in the path.
+
+As a silly example, if planet Earth were a UNIX file system, an
+absolute path to the tutorial room might be
+\begin{v}
+/earth/gb/wales/aberystwyth/penglais/llandinam/c57a
+\end{v}
+
+If my ``working directory'' were \verb+aberystwyth+, a relative path ---
+which shows how to get to another directory from the working directory ---
+might be
+\begin{v}
+penglais/llandinam/c57a
+\end{v}
+More realistically, a file called \verb+project1.tex+ inside a directory
+called \verb+work+ in my home directory would have the absolute path
+\begin{v}
+/aber/jaf18/work/project1.tex
+\end{v}
+or, using the shorthand \verb+~+ character\footnote{called a ``tilde''}:
+\begin{v}
+~/work/project1.tex
+\end{v}
+or, if we want to look at the home directory of a different user than the
+one currently logged in,
+\begin{v}
+~jaf18/work/project1.tex
+\end{v}
+Relative paths always start with a directory or file name, while
+absolute paths always start with a ``/'' or ``~''.
+
+\subsubsection{Going up the tree}
+Let's look at the silly example of the ``Earth file system'' again. If
+I were in (say) Physics Main, how could I get to C57A? In other
+words, what's the \emph{relative path} from there to C57A?
+
+Firstly, let's find out the absolute path to Physics Main:
+\begin{v}
+/earth/gb/wales/aberystwyth/penglais/physics/physicsMain
+\end{v}
+Now we can see what we need to do:
+\begin{itemize}
+\item go up to the \verb+physics+ directory
+\item go up again to the \verb+aberystwyth + directory
+\item go down to the \verb+llandinam+ directory
+\item go down to \verb+c57a+
+\end{itemize}
+We can go ``up'' a level inside a path by using ``..'' instead of a directory
+name:
+\begin{v}
+../../llandinam/c57a
+\end{v}
+You'll do this a lot --- for example, you might do some work inside your
+\verb+work/project1+ directory, and then want to do some more work on
+Project 2 in \verb+work/project2+. That might go something like this:
+\begin{v}[commandchars=\\\[\]]
+central:~ $ \emph[cd work/project1]
+central:~/work/project1 $
+...
+central:~/work/project1 $ \emph[cd ../project2]
+central:~/work/project2 $ 
+\end{v}
+As well as the ``..'' shorthand for ``the directory above,'' (also called
+the \emph{parent} directory) we also
+have ``.'' for ``the working directory.'' This can be useful in move 
+and copy commands. 
+
+\section{The anatomy of a command}
+Commands typically have three parts:
+\begin{itemize}
+\item The name of the command
+\item The options, which start with dashes
+\item The parameters of the command
+\end{itemize}
+For example, the \verb+ls+ command lists files. It has a lot of options,
+a couple of which are \verb+-l+ (to give a long listing) and \texttt{-a}
+(to include hidden files.) Any parameters it takes are the names of files
+and directories it should list. So
+\begin{v}
+ls -l -a ../project1 ../project2
+\end{v}
+will produce a long listing, containing all the hidden files, of 
+the contents of the directories \verb+project1+ and \verb+project2+, both
+of which are inside the current directory!
+
+A lot of the time you can join options together, so 
+\begin{v}
+ls -la  ../project1 ../project2
+\end{v}
+will do the same thing.
+
+\subsection{Wildcards}
+Some commands can work on many files --- for example, the \verb+ls+ command
+above. To help, we can use so-called ``wildcards'' which let us 
+specify files given only a part of their name. The ``*'' wildcard matches
+any sequence of characters, and the ``?'' wildcard matches any single
+character. So:
+\begin{v}
+ls a*
+\end{v}
+means ``list all the files whose names are `a' followed by any sequence 
+of characters'' --- in other words, all the files whose names start with
+``a''. Similarly,
+\begin{v}
+ls *a
+\end{v}
+will list all the files whose names \emph{end} with the letter ``a''.
+Here's a more complex one:
+\begin{v}
+ls *.???
+\end{v}
+This will specify files which start with any sequence of characters,
+followed by a ``.'', followed by exactly three characters. 
+
+\section{The most important command}
+\begin{tabular}{l|p{2in}}
+man \emph{command} & get information about a command
+\end{tabular}
+
+
+\section{Changing directory}
+\begin{tabular}{l|p{2in}}
+cd \emph{path} & change the working directory to a specified directory. Some
+examples follow.\\
+cd ~ & change to your home directory  \\
+cd & shorthand way to change to your home directory \\
+cd .. & change to the directory within which your current directory 
+is contained (the \emph{parent} directory)\\
+cd / & change to the root directory of the whole system\\
+cd . & change the current working directory to the current working
+directory! (Yes, it's pointless.) \hrule \\
+pwd & print the absolute path of the current working directory
+\end{tabular}
+
+\section{Listing directories}
+\begin{tabular}{l|p{2in}}
+ls & get a short listing of the contents of the current working directory\\
+ls \emph{path} & get a short listing of the contents of a named directory\\
+ls .. & get a short listing of the contents of the parent directory\\
+ls -l & get a detailed listing of the contents of the current working
+directory\\
+ls -ld & get a detailed description of the current working directory itself\\
+ls -l \emph{path} & get a detailed listing of the contents of a named directory\\
+ls -la \emph{path} & get a detailed listing of the contents of a named directory, including those files which are usually hidden.\\
+ls -la \emph{path}|more & as above, but split into pages (see Pipes, below)
+\end{tabular}
+
+\section{Copying files}
+\begin{tabular}{l|p{2in}}
+cp \emph{file1} \emph{file2} & makes a new copy of \emph{file1} called \emph{file2}, keeping the old one.
+If there's already a file called \emph{file2} it will be overwritten.\\
+cp \emph{file} \emph{directory} & makes a new copy of \emph{file} inside
+\emph{directory}, but with the same name (so it'll be \emph{directory/file} .
+If there's already a file of that name inside \emph{directory} it will
+be overwritten.\\
+cp \emph{file1} \emph{directory/file2} & makes a new copy of \emph{file1}
+inside \emph{directory}, called \emph{file2} (so it'll be \emph{directory/file2} .
+If there's already a file of that name inside \emph{directory} it will
+be overwritten.\\
+cp \emph{list-of-files} \emph{directory} & copy all the files in the list
+into a directory.
+\end{tabular}
+
+\subsubsection{Examples}
+\begin{tabular}{l|p{2in}}
+cp foo bar & make a copy of the file \emph{foo} called \emph{bar}, overwriting
+any file of that name which may already exist.\\
+cp foo .. & copy the file \emph{foo} into the parent directory.\\
+cp ../foo . & copy the file \emph{foo}, which is in the parent directory, into the current working directory \\
+\end{tabular}
+
+\subsection{Moving files}
+The \verb+mv+ command works almost exactly the same way as \verb+cp+, but
+it removes the original file!
+\begin{tabular}{l|p{2in}}
+mv \emph{file1} \emph{file2} & changes the name of \emph{file1} to \emph{file2}, keeping the old one.
+If there's already a file called \emph{file2} it will be overwritten.\\
+mv \emph{file} \emph{directory} & moves \emph{file} into
+\emph{directory}, so it'll now be \emph{directory/file} .
+If there's already a file of that name inside \emph{directory} it will
+be overwritten.\\
+mv \emph{file1} \emph{directory/file2} & moves \emph{file1}
+into \emph{directory}, and changes the name to \emph{file2} (so it'll be \emph{directory/file2} .
+If there's already a file of that name inside \emph{directory} it will
+be overwritten.\\
+mv \emph{list-of-files} \emph{directory} & move all the files in the list
+into a directory.
+\end{tabular}
+
+\subsection{Managing directories and deleting stuff}
+\begin{tabular}{l|p{2in}}
+mkdir \emph{path} & will make a new directory with that path\\
+rmdir \emph{path} & will remove the directory with that path\\
+rm \emph{list-of-files} & will remove some files\\
+rm -r \emph{list-of-paths} & will remove the named files and directories
+\emph{recursively} --- that is, it will also remove the files and directories
+any directories contain. \textbf{Use with extreme caution.} \\
+rm -rf \emph{list-of-paths} & will remove the named files and directories
+\emph{recursively} --- that is, it will also remove the files and directories
+any directories contain \emph{and not ask you to confirm!}
+\textbf{Use with even more extreme caution. You WILL do this wrong one day.}\\
+rm -rf * & \textbf{never use this} --- it will silently destroy everything
+in the current working directory. I shouldn't even be telling you about it.
+\end{tabular}
+
+\subsection{Pipes and redirection}
+Usually, input for a command comes from the keyboard and output goes
+to the screen. Sometimes it's useful to change this --- to get input
+from a file and output to a file. To do this, use the ``\textless'' character
+to get input from a file (think of the arrow as pointing towards the command
+name) and ``\textgreater'' to send output to a file.
+
+For example, we an put a long listing of our home directory into a file:
+\begin{v}
+ls -l >big_listing
+\end{v}
+
+We can also send the output of one command into the input of another using
+a \emph{pipe.} For example, the \verb+more+ command takes its input and
+splits it up into pages. If we have a big directory, we can list it
+page by page using:
+\begin{v}
+ls -l | more
+\end{v}
+This takes the output of \texttt{ls} and pipes it into \texttt{more}, which
+splits it into pages. Another example:
+\begin{v}
+ps ax | grep MyJavaProgram
+\end{v}
+This gets a list of all the running programs on the system, and searches
+through that list for lines containing the string ``MyJavaProgram''.
+Useful when a program goes out of control and you need to kill it!
+
+A fun example:
+\begin{v}
+ps ax | cut -c 28- | sort | uniq | wc -l
+\end{v}
+This
+\begin{itemize}
+\item list all processes
+\item cuts out the first 27 characters from each line, so we only
+get the program names
+\item sorts them alphabetically
+\item removes duplicate adjacent lines
+\item counts the number of lines
+\end{itemize}
+So we get a count of all the uniquely named processes running on the system.
+
+
+\subsection{Showing the contents of files}
+\begin{tabular}{l|p{2in}}
+cat \emph{list-of-files} & just joins all the files together and outputs
+them \\
+more \emph{list-of-files} & shows the files page by page \\
+more & splits the input into pages (input comes from the keyboard by
+default, but you'll typically redirect it from another command using a pipe)
+\end{tabular}
+
+
+\subsection{Permissions}
+Each UNIX file has a set of permissions describing who can do what to it.
+There are three types of permission:
+\begin{itemize}
+\item read permission --- if you have this, you can see the contents of the
+file or directory;
+\item write permission --- if you have this, you can write to the file or
+add new files (or delete or move) in the directory;
+\item execute permission --- if you have this permission on a
+program file or script you can run it; if you have it on a directory you
+can \verb+cd+ into it (make it your working directory.)
+\end{itemize}
+The permissions can be set differently for three different types of person:
+\begin{itemize}
+\item the owner of the file --- whoever originally created it
+\item the group ID of the file --- a rather crude way of setting things up
+so groups of people can have special access to a file; I won't worry about it too much
+\item everyone else
+\end{itemize}
+\subsubsection{The output of ls}
+These permissions are listed by \verb+ls -l+ in a very terse way:
+\begin{v}[commandchars=\\\[\]]
+central:~ $ \emph[ls -l sheet.pdf]
+-rw-rw-r--. 1 jaf18 jaf18 70273 Nov  8 14:05 sheet.pdf
+\end{v}
+The elements in order are:
+\begin{itemize}
+\item permissions block \verb+-rw-rw-r--.+ 
+\item the ``inode count'' (which is typically 1 for a file)
+\item the owner's user ID
+\item the group's user ID
+\item the size in bytes
+\item last modified date and time
+\item name
+\end{itemize}
+Looking at the permissions block we can see that it's split into
+elements:
+
+\begin{tabular}{l p{2in}}
+\verb+-+ & the type of the file: ``d'' would be a directory\\
+\verb+rw-+ & permissions for the user themselves\\
+\verb+rw-+ & permissions for the group\\
+\verb+r--+ & permissions for other users
+\end{tabular}
+
+So we can see that I (and anyone in my group, which is only me) am allowed to 
+read and write the file, and other people can read it.
+
+If I look at my home directory, things are different:
+\begin{v}[commandchars=\\\[\]]
+central:~ $ \emph[ls -ld ~]
+drwx------. 85 jaf18 jaf18 4096 Nov  8 13:23 /aber/jaf18
+\end{v}
+Note that I'm using the \verb+-d+ option to look at the actual directory:
+if I'd not used it, I'd get the contents of the directory!
+
+Here, the ``inode count'' shows the number of files in the directory,
+but what we're really interested in is the permissions:
+
+\begin{tabular}{l p{2in}}
+\verb+d+ & indicates this is a directory\\
+\verb+rwx+ & permissions for the user themselves\\
+\verb+---+ & permissions for the group\\
+\verb+---+ & permissions for anyone else
+\end{tabular}
+
+So I can read, write and \texttt{cd} into the directory and no-one
+else can do anything at all. Which is appropriate.
+
+\subsubsection{Changing permissions the ``easy'' way}
+\begin{tabular}{l|p{2in}}
+chmod o+x \emph{list-of-paths} & add execute permissions for other users to some files or directories\\
+chmod o-x \emph{list-of-paths} & remove execute permissions for other users from some files or directories\\
+chmod a+rw \emph{list-of-paths} & add read and write permissions for all users (that's user, group and other)\\
+chmod o-rwx \emph{list-of-paths} & remove all permissions for other users\\
+chmod u+rx \emph{list-of-paths} & add execute and read permissions for myself\\
+chmod g-x \emph{list-of-paths} & remove execute permissions for the group
+\end{tabular}
+You should get the idea: the first letter is ``u'' for the user, ``g'' for
+the group and ``o'' for others; the second character is ``+'' to add
+permissions and ``-'' to remove them; and the final set of characters is
+the permissions to add or remove. There's more it can do --- run
+\verb+man chmod+ to get the full info.
+
+\subsubsection{Changing permissions the hard way}
+This involves encoding the \texttt{rwxrwxrwx} block --- which divides into
+user, group and other --- as an octal number! 
+\begin{tabular}{l|p{2in}}
+chmod 755 \emph{list-of-paths} & set the permissions to: user can read, write
+and execute; group and read and execute; others can read and execute.
+\end{tabular}
+You might want to read up on this yourself, or stick with the other technique.
+I tend to use both.
+
+\section{Other useful commands (and keys)}
+
+\begin{tabular}{l|p{2in}}
+logout & logs you out of the computer\\
+touch \emph{file} & creates an empty file, or updates the last-modified
+date on an existing file\\
+grep \emph{pattern} \emph{files} & look for a ``pattern'' inside files --- 
+you'll be covering these patterns (called \emph{regular expressions}) later on,
+but it will also work on simple strings\\
+sort & sorts input into alphabetical order and outputs it \\
+du -H . & shows disk usage in current directory (find out what the H does!)\\
+w & tells you who's logged in and what they're up to \hrule\\
+\emph{(up arrow)} & shows previous commands\\
+\emph{(tab key)} & autocomplete\\
+
+\end{tabular}
+
+
+
+
+\end{document}
+
+
