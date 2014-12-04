@@ -41,8 +41,13 @@ Argument Expansions
 -------------------
 
  * `{old,new}` syntax. For commands that take multiple, similar arguments. E.g.:
+
 `$ mv app/src/foo.c app/src/foobar.c`
+
 which can be turned into:
+
 `$ mv app/src/{foo,foobar}.c`
+
 or even:
+
 `$ mv app/src/foo{,bar}.c`
