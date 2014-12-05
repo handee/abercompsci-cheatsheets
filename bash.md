@@ -13,7 +13,8 @@ Basic Commands
  * `pwd` - print the path of the current directory.
  * `ls <directory>` - list contents of a directory.
  * `cd <directory>` - change the current directory.
- * `cd -` - move back to the directory you were last in
+ * `cd -` - move back to the directory you were last in.
+ * `find -name <filename>` - find a file with a given name.
 
 ### File manipulation
 
@@ -33,6 +34,14 @@ Basic Commands
  * `cp -r <directory> <destination>` - copy a directory and it's contents.
  * `rm -r <directory>` - remove a directory and it's contents.
  * `chmod -r <permissions> <file>` - change permissions of a directory and it's contents.
+
+### Filter, sort and count data
+
+ * `grep <text> <file>` - search a file for a piece of text
+ * `grep -R <text> <directory>` - recursively search the files in a directory for a piece of text
+ * `sort <file>` - sort the contents of a file
+ * `wc [-l] [-w] <file>` - print a word count for a file
+   * `-l` for lines, `-w` for words
 
 Shortcuts
 ---------
