@@ -58,7 +58,7 @@ Shortcuts
 Managing processes
 ------------------
 
-A running process can be suspended with the `ctrl-z` shortcut, which will assign the process a 'job id' and allow you to continue using the shell. The `fg` command will resume the process in the foreground (the same way a process runs normally), and the `bg` command will resume the process in the background (it continues running but does not stop you using the shell at the same time). This is usually referred to as _job control_.
+A running process can be suspended with the `ctrl-z` shortcut, which will assign the process a 'job id' and allow you to continue using the shell. The `jobs` command will show a list of all running jobs. The `fg` command will resume the process in the foreground (the same way a process runs normally), and the `bg` command will resume the process in the background (it continues running but does not stop you using the shell at the same time). You can start a command in the background by adding a `&` after the command: `<command> &`.
 
 If you are running a command that will take a long time to finish on a server (or any machine where you might lose your connection), it's often useful to open a shell using [screen](http://www.gnu.org/software/screen/) or [tmux](http://tmux.sourceforge.net/) and run the command inside that. When you disconnect, the shell within screen or tmux will remain running, and when you next connect you can start using the same shell session again with `screen -R` or `tmux --attach`. 
 
