@@ -1,8 +1,12 @@
 Bash
 ====
 
-Basic Commands
---------------
+Commands
+--------
+
+Commands are listed with their most common arguments. Arguments are shown as `<name>`, optional parts of a command are shown `[with brackets]`. Most commands that take a file or directory name can be given a list of names.
+
+### Help
 
  * `man <command>` - view the manual page for a command.
  * `<command> --help` - show the usage information for a command.
