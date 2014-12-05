@@ -2,23 +2,37 @@ Bash
 ====
 
 Basic Commands
----------------
+--------------
 
  * `man <command>` - view the manual page for a command.
+ * `<command> --help` - show the usage information for a command.
+ * `history` - show recently executed commands.
+
+### Navigation
+
+ * `pwd` - print the path of the current directory.
  * `ls <directory>` - list contents of a directory.
  * `cd <directory>` - change the current directory.
-   - `cd -` - move back to the directory you were last in
- * `rm <file>` - remove file.
-   - `rm -r <directory>` - remove directory
- * `touch <file>` - create file.
- * `mv <file> <destination>` - move or rename a file.
+ * `cd -` - move back to the directory you were last in
+
+### File manipulation
+
+ * `touch <name>` - create an empty file, or update the timestamp on an existing file.
+ * `cat <file>` - print the contents of a file.
+ * `head [-n 10] <file>` - print the first 10 lines of a file.
+ * `tail [-n 10] <file>` - print the last 10 lines of a file.
  * `cp <file> <destination>` - copy a file.
-   - `cp -r <directory> <destination>` - copy directory
- * `chmod <permissions> <file|directory>` - change permissions of a file.
- * `pwd` - show present working directory.
- * `ln <source> <destination>` - create a link.
- * `history` - show recently executed commands.
+ * `mv <file> <destination>` - move or rename a file.
+ * `ln -s <source> <destination>` - create a link to a file or directory.
+ * `rm <file>` - remove file.
+ * `chmod <permissions> <file>` - change permissions of a file.
+
+### Directory manipulation
+
  * `mkdir <name>` - create a directory 
+ * `cp -r <directory> <destination>` - copy a directory and it's contents.
+ * `rm -r <directory>` - remove a directory and it's contents.
+ * `chmod -r <permissions> <file>` - change permissions of a directory and it's contents.
 
 Shortcuts
 ---------
@@ -35,8 +49,10 @@ A running process can be suspended with the `ctrl-z` shortcut, which will assign
 
 If you are running a command that will take a long time to finish on a server (or any machine where you might lose your connection), it's often useful to open a shell using [screen](http://www.gnu.org/software/screen/) or [tmux](http://tmux.sourceforge.net/) and run the command inside that. When you disconnect, the shell within screen or tmux will remain running, and when you next connect you can start using the same shell session again with `screen -R` or `tmux --attach`. 
 
-History Expansions
--------------------
+Syntax
+------
+
+### History Expansions
 
  * `!!` - previous command. Useful for:
 
@@ -58,8 +74,7 @@ $ cd path/to/thing
  * `!<string>` - most recent command starting with `<string>`
  * `!<number>` - run command with number as given by `history` command.
 
-Argument Expansions
--------------------
+### Argument Expansions
 
  * `{old,new}` syntax. For commands that take multiple, similar arguments. E.g.:
 
