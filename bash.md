@@ -4,21 +4,21 @@ Bash
 Basic Commands
 ---------------
 
- * `man` - view the manual page for a command.
- * `ls` - list contents of a directory.
- * `cd` - change the current directory.
+ * `man <command>` - view the manual page for a command.
+ * `ls <directory>` - list contents of a directory.
+ * `cd <directory>` - change the current directory.
    - `cd -` - move back to the directory you were last in
- * `rm <filename>` - remove file.
-   - `rm -r <directoryname>` - remove directory
- * `touch` - create file.
- * `mv <filename>` - move/rename file.
- * `cp` - copy file.
-   - `cp -r <directory>` - copy directory
- * `chmod` - change permissions of a file.
+ * `rm <file>` - remove file.
+   - `rm -r <directory>` - remove directory
+ * `touch <file>` - create file.
+ * `mv <file> <destination>` - move or rename a file.
+ * `cp <file> <destination>` - copy a file.
+   - `cp -r <directory> <destination>` - copy directory
+ * `chmod <permissions> <file|directory>` - change permissions of a file.
  * `pwd` - show present working directory.
- * `ln` - create a link.
+ * `ln <source> <destination>` - create a link.
  * `history` - show recently executed commands.
- * `mkdir` - create a directory 
+ * `mkdir <name>` - create a directory 
 
 History Expansions
 -------------------
