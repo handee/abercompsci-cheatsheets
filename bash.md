@@ -47,6 +47,25 @@ Commands are listed with their most common arguments. Arguments are shown as `<n
  * `wc [-l] [-w] <file>` - print a word count for a file
    * `-l` for lines, `-w` for words
 
+Chaining commands
+-----------------
+
+Multiple commands can be 'chained' togther in order to pass data between them or to decide what to do based on the success of the previous command.
+
+* `<command> | <command>` - pass the output of a command to the next command (PIPE)
+* `<command> && <command>` - run the second command if the first command succeeds (AND)
+* `<command> || <command>` - run the second command if the first command fails (OR)
+* `<command>; <command>` - run the second command after the first (eqivalent to a new line)
+
+<!-- All of the operators above should have an example -->
+
+Examples:
+
+* `find -name <filename> && echo 'file exists'` - echo a message if a file called `<filename>` exists
+* `grep <search> <file> || echo 'not in file'` - echo a message if `<file>` does not contain `<search>`
+* `grep <search> <file> | wc -l` - count how many lines `<file>` contain `<search>`
+* `sleep 60; echo 'done'` - echo 'done' after 60 seconds
+
 Shortcuts
 ---------
 
