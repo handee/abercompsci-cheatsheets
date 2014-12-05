@@ -23,9 +23,6 @@ Commands are listed with their most common arguments. Arguments are shown as `<n
 ### File manipulation
 
  * `touch <name>` - create an empty file, or update the timestamp on an existing file.
- * `cat <file>` - print the contents of a file.
- * `head [-n 10] <file>` - print the first 10 lines of a file.
- * `tail [-n 10] <file>` - print the last 10 lines of a file.
  * `cp <file> <destination>` - copy a file.
  * `mv <file> <destination>` - move or rename a file.
  * `ln -s <source> <destination>` - create a link to a file or directory.
@@ -39,8 +36,12 @@ Commands are listed with their most common arguments. Arguments are shown as `<n
  * `rm -r <directory>` - remove a directory and it's contents.
  * `chmod -r <permissions> <file>` - change permissions of a directory and it's contents.
 
-### Filter, sort and count data
+### Data manipulation
 
+ * `cat <file>` - print the contents of a file.
+ * `less <file>` - show the contents of a file in a scrollable viewer.
+ * `head [-n 10] <file>` - print the first 10 lines of a file.
+ * `tail [-n 10] <file>` - print the last 10 lines of a file.
  * `grep <text> <file>` - search a file for a piece of text
  * `grep -R <text> <directory>` - recursively search the files in a directory for a piece of text
  * `sort <file>` - sort the contents of a file
