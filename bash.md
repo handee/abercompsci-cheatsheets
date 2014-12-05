@@ -1,6 +1,8 @@
 Bash
 ====
 
+This cheatsheet is for Bash ("Bourne Again Shell"), the command-line shell you will see by default when you open a Terminal on a Mac or the Mint machines. If you want to learn more about shells in general, why not look at [ZSH](http://zsh.sourceforge.net/) or [FiSH](http://fishshell.com/)? Or if you're feeling really brave, check out [C-Shell](http://en.wikipedia.org/wiki/C_shell#Criticism) which was used by cruel people in the '90s.
+
 Commands
 --------
 
@@ -67,6 +69,21 @@ Examples:
 * `grep <search> <file> | wc -l` - count how many lines `<file>` contain `<search>`
 * `sleep 60; echo 'done'` - echo 'done' after 60 seconds
 
+Redirecting output
+------------------
+
+Saving the output of a command-line program to a file instead of printing it to the screen is known as *output redirection*. You can either overwrite files, or append to them (which comes in useful for keeping logs). You can also redirect only certain messages -- such as a program's error messages.
+
+* `<command> > <file>` - Run command, and *write* any output to the specified file. This will overwrite the contents of the file.
+* `<command> >> <file>` - Run command, and *append* any output to the specified file. This will add the program's output to the end of the file, instead of overwriting it.
+* `<command> 2> <file>` - Run command, print normal output to the screen as usual -- but save any error messages to a file.
+* `<command> 2>&1 >> <file>` - This *merges* the normal output and error messages into a single output, which will then be appended to the specified file.
+* `<command> > <file> 2> <anotherfile>` - Write output to one file, error messages to another.
+
+Complicated example:
+
+* `<command> > <file> 2>| fgrep -v 'WARNING' | tee -a <anotherfile>` - Run a command. Output goes to a file. Error messages get piped (see "chaining commands" section above) to the `fgrep` command. `-v` means 'invert the matches'. So `fgrep` will only output lines it receives from its input that *don't* contain the word 'WARNING'. The output from `fgrep` goes to `tee`, which will append that to `<anotherfile>`, as well as printing it to the screen. This is a pretty complex one -- but it's the sort of thing that comes in super handy!
+
 Shortcuts
 ---------
 
@@ -81,6 +98,8 @@ Managing processes
 A running process can be suspended with the `ctrl-z` shortcut, which will assign the process a 'job id' and allow you to continue using the shell. The `jobs` command will show a list of all running jobs. The `fg` command will resume the process in the foreground (the same way a process runs normally), and the `bg` command will resume the process in the background (it continues running but does not stop you using the shell at the same time). You can start a command in the background by adding a `&` after the command: `<command> &`.
 
 If you are running a command that will take a long time to finish on a server (or any machine where you might lose your connection), it's often useful to open a shell using [screen](http://www.gnu.org/software/screen/) or [tmux](http://tmux.sourceforge.net/) and run the command inside that. When you disconnect, the shell within screen or tmux will remain running, and when you next connect you can start using the same shell session again with `screen -R` or `tmux --attach`. 
+
+If you just want a program to keep running in the background when you quit the shell and you're not on a computer with `screen` or `tmux` installed, you can add `nohup` ("No hang-up") to the front of your command: `nohup <command> &`.
 
 Syntax
 ------
