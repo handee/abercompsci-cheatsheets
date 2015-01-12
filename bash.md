@@ -1,10 +1,12 @@
-Bash
-====
+<div style="float: right;">
+[Home](README.md)
+</div>
+
+#Bash
 
 This cheatsheet is for Bash ("Bourne Again Shell"), the command-line shell you will see by default when you open a Terminal on a Mac or the Mint machines. If you want to learn more about shells in general, why not look at [ZSH](http://zsh.sourceforge.net/) or [FiSH](http://fishshell.com/)? Or if you're feeling really brave, check out [C-Shell](http://en.wikipedia.org/wiki/C_shell#Criticism) which was used by cruel people in the '90s.
 
-Commands
---------
+## Commands
 
 Commands are listed with their most common arguments. Arguments are shown as `<name>`, optional parts of a command are shown `[with brackets]`. Most commands that take a file or directory name can be given a list of names.
 
@@ -145,3 +147,8 @@ or even:
 ```bash
 $ mv app/src/foo{,bar}.c
 ```
+
+<div style="float: right;">
+[Home](README.md)
+</div>
+
