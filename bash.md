@@ -1,5 +1,5 @@
 <p align="right">
-<a href="../README.md">Home</a>
+<a href="README.md">Home</a>
 </p>
 
 #Bash
@@ -149,6 +149,6 @@ $ mv app/src/foo{,bar}.c
 ```
 
 <p align="right">
-<a href="../README.md">Home</a>
+<a href="README.md">Home</a>
 </p>
 
