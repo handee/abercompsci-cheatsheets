@@ -1,11 +1,11 @@
-<div style="float: right;">
+<p align="right">
 [Home](../README.md)
-</div>
+</p>
 
 # Launching Applications 
 
 This section should talk about Launchpad and how to start applications from Spotlight and the Terminal (command line). 
 
-<div style="float: right;">
+<p align="right">
 [Home](../README.md)
-</div>
+</p>
