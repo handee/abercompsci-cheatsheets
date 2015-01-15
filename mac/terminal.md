@@ -1,6 +1,6 @@
-<div style="float: right;">
-[Home](../README.md)
-</div>
+<p align="right">
+<a href="../README.md">Home</a>
+</p>
 
 # Terminal 
 The Terminal application provides access to a Unix command line. 
@@ -9,6 +9,6 @@ The Terminal application provides access to a Unix command line.
 
 ## Console 
 
-<div style="float: right;">
-[Home](../README.md)
-</div>
+<p align="right">
+<a href="../README.md">Home</a>
+</p>

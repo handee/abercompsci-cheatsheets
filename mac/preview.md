@@ -1,6 +1,6 @@
-<div style="float: right;">
-[Home](../README.md)
-</div>
+<p align="right">
+<a href="../README.md">Home</a>
+</p>
 
 # PDF Manipulation
 
@@ -28,6 +28,6 @@ Select `Save as PDF`. A file dialog will be shown to allow you to choose the fil
 ## Adding and deleting pages from a PDF document 
 
 
-<div style="float: right;">
-[Home](../README.md)
-</div>
+<p align="right">
+<a href="../README.md">Home</a>
+</p>

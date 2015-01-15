@@ -1,10 +1,10 @@
-<div style="float: right;">
-[Home](../README.md)
-</div>
+<p align="right">
+<a href="../README.md">Home</a>
+</p>
 
 # Apple Mouse
 The Apple Mouse is more than a single button. 
 
-<div style="float: right;">
-[Home](../README.md)
-</div>
+<p align="right">
+<a href="../README.md">Home</a>
+</p>

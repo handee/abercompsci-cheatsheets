@@ -1,6 +1,6 @@
-<div style="float: right;">
-[Home](../README.md)
-</div>
+<p align="right">
+<a href="../README.md">Home</a>
+</p>
 
 # Apple Keyboard
 
@@ -30,7 +30,7 @@ Whilst this isn't visible on the iMac keyboard, simply type the Option+3 combina
 ## Diacritics 
 To insert a character with a diacritic, press and hold the character. For example, to add the character é (e-acute), press and hold the e character. A popup selector will be displayed. Either select the number under the character, select the character with the mouse or use the left and right cursor keys and return to select. 
 
-<div style="float: right;">
-[Home](../README.md)
-</div>
+<p align="right">
+<a href="../README.md">Home</a>
+</p>
 

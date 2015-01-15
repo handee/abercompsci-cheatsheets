@@ -1,6 +1,6 @@
-<div style="float: right;">
-[Home](../README.md)
-</div>
+<p align="right">
+<a href="../README.md">Home</a>
+</p>
 
 # Image Manipulation 
 The Preview application provides a few simple image manipulation tools. 
@@ -21,6 +21,6 @@ Preview can save to one of the following formats:
 * PNG 
 * TIFF 
 
-<div style="float: right;">
-[Home](../README.md)
-</div>
+<p align="right">
+<a href="../README.md">Home</a>
+</p>

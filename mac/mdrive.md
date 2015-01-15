@@ -1,6 +1,6 @@
-<div style="float: right;">
-[Home](../README.md)
-</div>
+<p align="right">
+<a href="../README.md">Home</a>
+</p>
 
 # Mounting a drive on Mac OS X
 The iMac machines in the Orchard already have your Central IS filestore attached. Therefore, you do not need to mount the M: drive to the machine. However, if you need to mount a drive from a different machine, or indeed want to mount your IS filestore on your laptop, follow these instructions. 
@@ -29,6 +29,6 @@ The contents of your `M:` drive should then appear
 ## Case Insensitive .. 
 Note: you can use an alternative URL for accessing your IS filestore. It is `smb://smb1.aber.ac.uk/your_username`. However, this version is **not** case sensitive. 
 
-<div style="float: right;">
-[Home](../README.md)
-</div>
+<p align="right">
+<a href="../README.md">Home</a>
+</p>

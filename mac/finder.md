@@ -1,6 +1,6 @@
-<div style="float: right;">
-[Home](../README.md)
-</div>
+<p align="right">
+<a href="../README.md">Home</a>
+</p>
 
 # Finder
 
@@ -44,6 +44,6 @@ The above dialog shows that all applications appear to be active. If OS X thinks
 
 If you do need to stop the application, select the application from the list and press Force Quit. In most circumstances, that will stop the application. If the application refuses to quit, you might need to open the Activity Monitor application or open the Terminal to run kill. 
 
-<div style="float: right;">
-[Home](../README.md)
-</div>
+<p align="right">
+<a href="../README.md">Home</a>
+</p>

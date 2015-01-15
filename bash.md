@@ -1,6 +1,6 @@
-<div style="float: right;">
-[Home](README.md)
-</div>
+<p align="right">
+<a href="../README.md">Home</a>
+</p>
 
 #Bash
 
@@ -148,7 +148,7 @@ or even:
 $ mv app/src/foo{,bar}.c
 ```
 
-<div style="float: right;">
-[Home](README.md)
-</div>
+<p align="right">
+<a href="../README.md">Home</a>
+</p>
 
