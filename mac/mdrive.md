@@ -1,5 +1,5 @@
 <p align="right">
-<a href="../README.md">Home</a>
+<a href="README.md">Home</a>
 </p>
 
 # Mounting a drive on Mac OS X
@@ -30,5 +30,5 @@ The contents of your `M:` drive should then appear
 Note: you can use an alternative URL for accessing your IS filestore. It is `smb://smb1.aber.ac.uk/your_username`. However, this version is **not** case sensitive. 
 
 <p align="right">
-<a href="../README.md">Home</a>
+<a href="README.md">Home</a>
 </p>
