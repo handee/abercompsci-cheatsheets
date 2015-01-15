@@ -1,5 +1,5 @@
 <p align="right">
-[Home](../README.md)
+<a href="../README.md">Home</a>
 </p>
 
 # Launching Applications 
