@@ -25,7 +25,7 @@ Tab (add a tab to some applications, e.g. Safari and Finder) | Cmd+t
 Toggle current window in the application | Cmd+~
 
 ## # Key
-Whilst this isn't visible on the iMac keyboard, simply type the Option+3 combination to insert the # character. The option key is often referred to as the alt key. 
+Whilst this isn't visible on the iMac keyboard, simply type the Option+3 combination to insert the # character. The option key is often referred to as the alt key. It is to the left of the Cmd key. 
 
 ## Diacritics 
 To insert a character with a diacritic, press and hold the character. For example, to add the character é (e-acute), press and hold the e character. A popup selector will be displayed. Either select the number under the character, select the character with the mouse or use the left and right cursor keys and return to select. 
