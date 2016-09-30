@@ -3,7 +3,7 @@
 </p>
 
 # Mounting a drive on Mac OS X
-The iMac machines in the Orchard already have your Aber Comp Sci filestore attached. Therefore, you do not need to mount the this drive to the machine. However, if you need to mount a drive from a different machine, or mount your IS filestore, follow these instructions. 
+The iMac machines in the Orchard already have your IMPACS filestore attached. Therefore, you do not need to mount the this drive to the machine. However, if you need to mount a drive from a different machine, or mount your IS filestore, follow these instructions. 
 
 ## Mounting 
 1. Open **Finder** by clicking on its icon on the far left of the
