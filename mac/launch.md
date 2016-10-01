@@ -32,12 +32,12 @@ There will normally be extra screens, indicated by the circles at the bottom. To
 To return to Finder, click on the background of the launchpad. 
 
 ## Spotlight 
-Spotlight is used to search the machine. It can also be used to start an application. Click on Cmd+Space. On Mavericks, the spotlight bar opens in the top-right of the machine. You can also click the magnifying glass in the same location. 
+Spotlight is used to search the machine. However, as part of the work to integrate the iMacs with the network file store, Spotlight indexing of files has been disabled. Therefore Spotlight search is less useful on this setup. However, the Spotlight feature for starting applications is still useful. 
+
+To start the search feature, click on Cmd+Space. On El Capitan, the spotlight bar opens in the middle of the machine.  
 
 Enter the name of the application you want to start. Normally, starting to type the name is enough. If the text matches the name of the application, it will be shown as the top-hit and highlighted. Press return to run the application. 
-
-  ![Using Spotlight to launch Terminal](images/launch-spotlight-terminal.png)
-
+  
 ## Terminal 
 You can also launch an application from the terminal, although this is less likely than the other two options. It is more likely that you might use the terminal to open a file within an application. 
 

@@ -36,7 +36,7 @@ The contents of your `M:` drive should then appear.
     
   
 ## Access from the command line
-If you need to access the mounted filestore via the command line, look in /Volumes to find the directory where the filestore has been mounted. This is likely to be /Volumnes/your_userid if this is the only extra drive you have mounted. 
+If you need to access the mounted filestore via the command line, look in /Volumes to find the directory where the filestore has been mounted. This is likely to be /Volumes/your_userid if this is the only extra drive you have mounted. 
   
 <p align="right">
 <a href="../README.md">Home</a>

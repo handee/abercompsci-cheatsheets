@@ -3,7 +3,7 @@
 A set of quick guides for using the Linux and Mac OS X machines in the Aberystwyth Computer Science department. All students and staff in the department are able to use the Linux machines in the Delphinium and the OS X machines in the Orchard. 
 
 ## OS X (Orchard)
-The following information is relevant for users of OS X Mavericks. 
+The following information is relevant for users of OS X El Capitan. 
 
 * [Launching Applications](mac/launch.md) - Launchpad, Terminal (command line), Spotlight.
 * Apple [Keyboard basics](mac/keyboard.md) - Cmd, #, Ctrl, Option.
