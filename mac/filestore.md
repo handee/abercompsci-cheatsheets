@@ -17,9 +17,10 @@ As part of this change, it is important to remember that you need to store your 
 
 ## Video to explain how to access your network files
 
-A video is available to explain how to access your network. This is on YouTube at [https://youtu.be/8LJsWctn8MU](https://youtu.be/8LJsWctn8MU), also available below. 
+A video is available to explain how to access your network. This is on YouTube at [https://youtu.be/8LJsWctn8MU](https://youtu.be/8LJsWctn8MU). 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8LJsWctn8MU" frameborder="0" allowfullscreen></iframe>
+<a href="https://youtu.be/8LJsWctn8MU"><img src="images/filestore-video.png" /></a>
+
 
 ## Network filestore available
 
