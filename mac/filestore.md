@@ -3,7 +3,7 @@
 </p>
 
 # Filestore 
-In September 2017, we made a change to how the filestore on the macOS machines is configured. Please read this information carefully so you understand the setup. 
+In September 2017, we made a change to how the filestore on the macOS machines is configured. Please read this information carefully so you understand the setup, **otherwise you may lose work**. 
 
 ## A bit of history
 Before September 2017, we have setup the machines so that when you log in, your home filestore was mounted from a network disk.  Therefore, users did not store files locally on a machine. The advantage of this approach was that your files would be available to you on whichever machine you logged into in the room.
@@ -11,13 +11,13 @@ Before September 2017, we have setup the machines so that when you log in, your 
 Unfortunately, the way that some applications are designed to run on macOS meant that this could create to a lot of accesses to the network disk. That slowed down machines, affected the network and had a negative impact on the user experience. 
 
 ## Change in September 2017
-In September 2017, we have changed the setup so that your default disk space is local to the machine that you are using. You still have access to the networked files, such as your M: drive or a networked area for IMPACS staff and students. 
+In September 2017, we have changed the setup so that your default disk space is local to the machine that you are using. You still have access to your networked files on the IS and IMPACS servers (M: and P:)<sup>1</sup>. 
 
 As part of this change, it is important to remember that you need to store your files on the Network filestore so that you can access it from other machines.
 
 ## Video to explain how to access your network files
 
-A video is available to explain how to access your network. This is on YouTube at [https://youtu.be/8LJsWctn8MU](https://youtu.be/8LJsWctn8MU). 
+A video is available to explain how to access your network filestore. This is on YouTube at [https://youtu.be/8LJsWctn8MU](https://youtu.be/8LJsWctn8MU). 
 
 <a href="https://youtu.be/8LJsWctn8MU"><img src="images/filestore-video.png" /></a>
 
@@ -27,7 +27,7 @@ A video is available to explain how to access your network. This is on YouTube a
 When you log in, you the following filestores are mounted. 
 
 * `/aber/{username}` - your Information Services filestore, i.e. the M: drive
-* `/impacs/{username}` - additional filestore for all members of IMPACS
+* `/impacs/{username}` - your IMPACS filestore, i.e. the P: drive
 * `/dcs/{username}` - Staff in Computer Science can also access their Computer Science filestore. 
 
 **Note** - replace `{username}` with your own username.
@@ -57,6 +57,12 @@ We cannot leave the local files on machines for too long otherwise there would n
 
 So, please remember to store files on the network file store so that you can access them again next time or from another machine.
 
+
+<hr />
+<sup>1</sup> For clarification: 
+
+* M: is `\\smb1.aber.ac.uk\{username}`
+* P: is `\\homefs.imaps.aber.ac.uk\{username}`
 
 <p align="right">
 <a href="../README.md">Home</a>
