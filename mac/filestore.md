@@ -8,7 +8,7 @@ In September 2017, we made a change to how the filestore on the macOS machines i
 ## A bit of history
 Before September 2017, we have setup the machines so that when you log in, your home filestore was mounted from a network disk.  Therefore, users did not store files locally on a machine. The advantage of this approach was that your files would be available to you on whichever machine you logged into in the room.
 
-Unfortunately, the way that some applications are designed to run on macOS meant that this could create to a lot of accesses to the network disk. That slowed down machines, affected the network and had a negative impact on the user experience. 
+Unfortunately, the way that some applications are designed to run on macOS meant that this could create a lot of accesses to the network disk. That slowed down machines, affected the network and had a negative impact on the user experience. 
 
 ## Change in September 2017
 In September 2017, we have changed the setup so that your default disk space is local to the machine that you are using. You still have access to your networked files on the IS and IMPACS servers (M: and P:)<sup>1</sup>. 
