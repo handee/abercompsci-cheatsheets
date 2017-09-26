@@ -1,11 +1,12 @@
 # [AberCompSci](http://twitter.com/AberCompSci) Cheat Sheets
 
-A set of quick guides for using the Linux and Mac OS X machines in the Aberystwyth Computer Science department. All students and staff in the department are able to use the Linux machines in the Delphinium and the OS X machines in the Orchard. 
+A set of quick guides for using the Linux and Mac OS X machines in the Aberystwyth Computer Science department. All students and staff in the Institute of Mathematics, Physics and Computer Science (IMPACS) are able to use the Linux machines in the Delphinium and the dual-boot macOS and Linux machines in the Orchard. 
 
-## OS X (Orchard)
-The following information is relevant for users of OS X El Capitan. 
+## macOS (Orchard)
+The following information is relevant for users of mac OS Sierra. 
 
 * [Launching Applications](mac/launch.md) - Launchpad, Terminal (command line), Spotlight.
+* [Filestore](mac/filestore.md) - Understanding where to save files on macOS in the Orchard
 * Apple [Keyboard basics](mac/keyboard.md) - Cmd, #, Ctrl, Option.
 * Apple [Mouse](mac/mouse.md) - right click, and more. 
 * [Terminal](mac/terminal.md) command line operation - including access to the Console. 
@@ -19,7 +20,6 @@ The following information is relevant for users of OS X El Capitan.
 * [Airdrop](mac/airdrop.md) - wirelessly share files with other Macs nearby.
 * [System Preferences](mac/system-preferences.md) - adjusting system settings.  
 
-**Tip** You pronounce OS X as O S 10. 
 
 ## Mint (Delphinium)
 
@@ -27,6 +27,6 @@ The following information is relevant for users of OS X El Capitan.
 * Launching applications (?)
 
 ## Support 
-The OS X and Linux machines are managed by Computer Science Support (CS Support). If you have a problem with a machine, please contact CS Suport by email [cs-support@aber.ac.uk](mailto:cs-support@aber.ac.uk) or go to the office FIXME in the Computer Science building. Tell them which machine you are working on; you can find that information FIXME. 
+The macOS and Linux machines are managed by Computer Science Support (CS Support). If you have a problem with a machine, please contact CS Suport by email [cs-support@aber.ac.uk](mailto:cs-support@aber.ac.uk). Tell them which machine you are working on; you can find that information FIXME. 
 
 You can also ask for help via the [Aber Comp Sci Q & A Facebook](https://www.facebook.com/groups/acs.qa/) group. 

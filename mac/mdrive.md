@@ -2,10 +2,12 @@
 <a href="../README.md">Home</a>
 </p>
 
-# Mounting a drive on Mac OS X
-The iMac machines in the Orchard are using filestore provided by IMPACS. This is mounted as `/impacs/your_userid` and is your default filestore when using the iMacs. 
+# Mounting a drive on macOS
+The iMac machines in the Orchard have access to network filestore for IMPACS and the Information Services M: drive. You should not need to mount these separately. See [Filestore](filestore.md) for details about accessing those files. 
 
-The IMPACS filestore is different from your IS filestore; we sometimes refer to the IS filestore as M: drive.  You can still mount your IS filestore  if you need access to those files. 
+This page might be helpful to new MacOS users who want to access a network filestore from another Mac. 
+
+The IMPACS filestore is mounted as `/impacs/your_userid`. The IMPACS filestore is different from your IS filestore; we sometimes refer to the IS filestore as M: drive. 
 
 To mount your IS filestore, or a drive from another file server, follow these instructions. 
 
