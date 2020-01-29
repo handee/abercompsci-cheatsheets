@@ -27,6 +27,6 @@ The following information is relevant for users of mac OS Sierra.
 * Launching applications (?)
 
 ## Support 
-The macOS and Linux machines are managed by Computer Science Support (CS Support). If you have a problem with a machine, please contact CS Suport by email [cs-support@aber.ac.uk](mailto:cs-support@aber.ac.uk). Tell them which machine you are working on; you can find that information FIXME. 
+The macOS and Linux machines are managed by Computer Science Support (CS Support). If you have a problem with a machine, please contact CS Suport by email [cs-support@aber.ac.uk](mailto:cs-support@aber.ac.uk). Tell them which machine you are working on; you can find that information on the machine. 
 
 You can also ask for help via the [Aber Comp Sci Q & A Facebook](https://www.facebook.com/groups/acs.qa/) group. 
