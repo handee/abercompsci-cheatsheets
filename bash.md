@@ -151,4 +151,3 @@ $ mv app/src/foo{,bar}.c
 <p align="right">
 <a href="README.md">Home</a>
 </p>
-
